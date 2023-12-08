@@ -7,12 +7,16 @@ function sendData() {
         },
         body: JSON.stringify({ data: inputData })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
         console.log('Success:', data);
-        // Optionally display a confirmation message in the frontend
+        document.getElementById('responseOutput').textContent = data.message;
     })
-    .catch((error) => {
+    .catch(error => {
         console.error('Error:', error);
-    });
 }
