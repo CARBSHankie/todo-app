@@ -1,6 +1,6 @@
 function sendData() {
     const inputData = document.getElementById('inputData').value;
-    fetch('https://your-backend-url/data', {
+    fetch('https://todo-app-backend-wangroger93.replit.app/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
