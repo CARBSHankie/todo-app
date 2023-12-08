@@ -12,10 +12,12 @@ function addTask() {
 }
 
 function fetchTasks() {
-    fetch('https://todo-app-backend--wangroger93.repl.co/tasks')
+    fetch('https://todo-app-backend-wangroger93.replit.app/tasks')
         .then(response => response.json())
         .then(tasks => {
-            // Process and display the tasks
+            // process and display tasks
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
