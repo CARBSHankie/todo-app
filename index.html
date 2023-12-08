@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo App</title>
+    <title>Simple Frontend</title>
 </head>
 <body>
-    <h1>Todo App</h1>
-    <input type="text" id="new-todo" placeholder="Add a new task">
-    <button onclick="addTodo()">Add</button>
-    <ul id="todo-list"></ul>
+    <h1>Message from Backend</h1>
+    <button id="fetchMessage">Fetch Message</button>
+    <p id="message"></p>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('fetchMessage').addEventListener('click', function() {
+            fetch('https://your-backend-url/message')  // Replace with your backend URL
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').textContent = data.text;
+                })
+                .catch(error => {
+                    console.error('Error fetching message:', error);
+                });
+        });
+    </script>
 </body>
 </html>
