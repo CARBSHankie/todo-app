@@ -22,7 +22,7 @@ function addTask() {
     let input = document.getElementById('todoInput');
     let newTaskText = input.value;
     if (newTaskText !== '') {
-        fetch('https://todo-app-backend--wangroger93.repl.co/tasks', {
+        fetch('https://todo-app-backend-wangroger93.replit.app', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: newTaskText })
