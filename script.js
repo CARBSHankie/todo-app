@@ -19,4 +19,5 @@ function sendData() {
     })
     .catch(error => {
         console.error('Error:', error);
+    }); // Added missing parentheses and bracket here
 }
