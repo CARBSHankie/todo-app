@@ -10,7 +10,7 @@
 
     <script>
         document.getElementById('fetchMessage').addEventListener('click', function() {
-            fetch('https://todo-app-backend-wangroger93.replit.app')  // Replace with your backend URL
+            fetch('https://todo-app-backend-wangroger93.replit.app/message')  // Replace with your backend URL
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('message').textContent = data.text;
