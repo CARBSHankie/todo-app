@@ -25,18 +25,19 @@ function addTask() {
         fetch('https://todo-app-backend--wangroger93.repl.co/tasks', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: newTaskText }) // Update as per your backend's expected format
+            body: JSON.stringify({ text: newTaskText })
         })
         .then(response => response.json())
         .then(newTask => {
             let listItem = document.createElement('li');
-            listItem.textContent = newTask.text; // Assuming the response includes the new task
+            listItem.textContent = newTask.text;
             document.getElementById('todoList').appendChild(listItem);
             input.value = ''; // Clear the input
         })
         .catch(error => console.error('Error:', error));
     }
 }
+
 
 // Call fetchTasks on page load to display existing tasks
 window.onload = function() {
