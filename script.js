@@ -2,7 +2,7 @@ console.log("JavaScript is working!");
 
 // Fetch tasks from backend and display them
 function fetchTasks() {
-    fetch('https://todo-app-backend--wangroger93.repl.co/tasks')
+    fetch('https://todo-app-backend-wangroger93.repl.co/tasks')
         .then(response => response.json())
         .then(tasks => {
             const tasksList = document.getElementById('todoList');
